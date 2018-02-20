@@ -1,0 +1,56 @@
+body {
+	margin: 2%;
+	background-color: rgb(200,100,0);
+	text-align: center;
+	color: black;
+}
+h1 {
+	margin: 10px;
+	font-size: 50px;
+	font-weight: bold;
+}
+h2 {
+	margin: 5px;
+	font-size: 24px;
+	font-weight: bold;
+}
+a {
+	color: rgb(251,189,25);
+}
+li {
+	text-align: center;
+}
+.row {
+	margin: 0 auto;
+}
+.title-box {
+	/*position: absolute;*/
+	width: 100%;
+	/*top: 20%;*/
+	margin-bottom: 40px;
+	text-align: center;
+}
+.bottom-boxes {
+	margin: 0 auto;
+	/*position: absolute;*/
+	/*top: 20%;*/
+	text-align: center;
+}
+.names {
+	min-height: 125px;
+}
+.name-wrap {
+	word-wrap: break-word;
+}
+input[name = "pic-choice"] { /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+input + label > img{
+	opacity: .6;
+}
+
+input:checked + label > img{ /* (RADIO CHECKED) IMAGE STYLES */
+  opacity: 1;
+}

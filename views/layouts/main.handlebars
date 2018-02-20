@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "UTF-8">
+		<title>Take Names and Kick Ass</title>
+		<script src = "https://code.jquery.com/jquery.js"></script>
+		<link rel="stylesheet" href="assets/css/reset.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/assets/css/style.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script src = "/assets/js/ass.js"></script>
+	</head>
+	<body>
+		<div class = "row">
+			<div class="title-box">
+				<h1>Take Names and Kick Ass</h1>
+				<img src="/assets/img/titleimage.png">
+			</div>
+		</div>
+		<div class ="row">
+			<div class ="bottom-boxes">
+				{{{ body }}}
+			</div>
+		</div>
+		Find some new friends <a href = "https://immense-beyond-78884.herokuapp.com/" target="_blank">here</a>.
+		<br>Copyright 2018 Michelle Le
+		<script type="text/javascript">
+		let picChoices = [];
+		for (let i = 0; i < 12; i++)
+		{
+			picChoices.push("<img src = '/assets/img/"+i+".png'>");
+		}
+		let div = $("<div>");
+		div.addClass("col-md-3");
+		for (let i = 0; i < picChoices.length; i++)
+		{
+			var column = $("<div>");
+			column.addClass("col-sm-3");
+			column.attr("id", "pic-col"+i);
+			$("#pic-choices").append(column);
+
+			var input = $("<input>");
+			input.addClass("form-check-input hidden-radio");
+			input.attr("type", "radio");
+			input.attr("name", "pic-choice");
+			input.attr("id", "pic-radio"+i);
+			input.attr("value", i);
+			$("#pic-col"+i).append(input);
+
+			var label = $("<label>");
+			label.addClass("form-check-label");
+			label.attr("id", "pic-label"+i);
+			label.attr("for", "pic-radio"+i);
+			$("#pic-col"+i).append(label);
+
+			$("#pic-label"+i).append(picChoices[i]);
+
+		}
+		</script>
+	</body>
+<html>
