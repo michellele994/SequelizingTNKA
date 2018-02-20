@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+var db = require("./models");
 
 app.use(express.static("public"));
 
@@ -16,10 +17,12 @@ const exphbs = require("express-handlebars");
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-const routes = require("./controllers/ass_controller.js");
 
-app.use(routes);
+require("./controllers/ass_controller.js")(app);
 
-app.listen(PORT, function() {
-	console.log("App now listening at localhost: " + PORT);
-})
+
+db.sequelize.sync().then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});

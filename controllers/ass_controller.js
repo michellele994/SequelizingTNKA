@@ -1,41 +1,21 @@
-const express = require("express");
+const db = require("../models");
 
-const router = express.Router();
-
-const ass = require("../models/ass.js");
-
-//ensure that all in database is being displayed
-router.get("/", function(req, res) {
-	ass.all(function(data) {
-		const hbsObject = {
-			asses: data
-		};
-		console.log(hbsObject)
-		res.render("index", hbsObject)
-	})
-});
-router.post("/api/asses", function(req, res) {
-	ass.create(["ass_name", "ass_picture", "ass_kicked"], [req.body.ass_name, req.body.ass_picture, req.body.ass_kicked], function(result) {
-		res.json({ id: result.insertId});
+module.exports = function(app) {
+	app.get("/api/asses", function(req, res) {
+		db.assesTable.findAll({}).then(function(dbAsses) {
+			res.json(dbAsses);
+		});
 	});
-});
-//When new data is being placed into database
-router.put("/api/asses/:id", function(req, res) {
-	const condition = "id = " + req.params.id;
+	app.post("/api/asses", function(req, res) {
+		console.log(req.body);
 
-	console.log("condition", condition);
+		db.assesTable.create({
+			ass_name: req.body.ass_name,
+			ass_picture: req.body.ass_picture,
+			ass_kicked: req.body.ass_kicked
+		}).then(function(dbAsses) {
+			res.json(dbAsses);
+		});
+	});
+}
 
-	ass.update(
-	{
-		ass_kicked: req.body.ass_kicked
-	},
-	condition,
-	function(result)
-	{
-		if (result.changedRows === 0) {
-			return res.status(404).end();
-		}
-		res.status(200).end();
-	})
-})
-module.exports = router;
