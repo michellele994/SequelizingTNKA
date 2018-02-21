@@ -19,6 +19,7 @@ app.set("view engine", "handlebars");
 var db = require("./models");
 
 require("./controllers/ass_controller.js")(app);
+require("./controllers/kicker_controller.js")(app);
 
 
 db.sequelize.sync().then(function() {

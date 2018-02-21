@@ -1,6 +1,6 @@
 const db = require("../models");
 module.exports = function(app) {
-	app.get("/", function(req, res) {
+	app.get("/letskickass", function(req, res) {
 		db.assesTable.findAll({}).then(function(dbAsses) {
 			const hbsObject = {
 				assesTable: dbAsses
@@ -9,7 +9,9 @@ module.exports = function(app) {
 		});
 	})
 	app.get("/api/asses", function(req, res) {
-		db.assesTable.findAll({}).then(function(dbAsses) {
+		db.assesTable.findAll({
+			include: [db.Kicker]
+		}).then(function(dbAsses) {
 			res.json(dbAsses);
 		});
 	});

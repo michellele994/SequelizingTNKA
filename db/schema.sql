@@ -10,4 +10,12 @@ CREATE TABLE asses (
     PRIMARY KEY (id)
 );
 
+SET FOREIGN_KEY_CHECKS=0;
 SELECT * FROM asses;
+
+DROP TABLE IF EXISTS assesTables;
+DROP TABLE IF EXISTS kickers;
+SELECT * FROM kickers;
+SELECT * FROM assesTables;
+INSERT INTO kickers (name) VALUES ("jill");
+INSERT INTO kickers (name) VALUES ("jones");
