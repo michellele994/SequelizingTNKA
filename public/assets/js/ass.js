@@ -18,11 +18,11 @@ $(function() {
 			});
 	});
 	//add to the database
-	$(".create-form").on("submit", function(event) {
+	$("#take-name").on("click", function(event) {
 		event.preventDefault();
-		if ($("#choose-name").val() !== "null")
+		var kicker = $("#choose-name").val();
+		if (kicker !== "null")
 		{
-			const kicker = $("#choose-name").val();
 			var newAss = {
 				ass_name: $("#ass_name").val().trim(),
 				ass_picture: $("input[name='pic-choice']:checked").val(),
@@ -42,6 +42,7 @@ $(function() {
 					location.reload();
 				})
 				$("#ass_name").val("");
+				kicker = "null";
 				$("input[name='pic-choice'").prop('checked', false);
 			}
 			else

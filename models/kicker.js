@@ -1,7 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
   var Kicker = sequelize.define("Kicker", {
     // Giving the Author model a name of type STRING
-    name: DataTypes.STRING
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    }
   });
 
   Kicker.associate = function(models) {

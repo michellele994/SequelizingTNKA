@@ -1,8 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
   var assesTable = sequelize.define("assesTable", {
-    ass_name: DataTypes.STRING,
-    ass_picture: DataTypes.INTEGER,
-    ass_kicked: DataTypes.BOOLEAN
+    ass_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    ass_picture: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
+    ass_kicked: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: false
+    }
   });
 
     assesTable.associate = function(models) {
