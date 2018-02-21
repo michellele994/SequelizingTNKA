@@ -21,10 +21,10 @@
 	<h2>Names Taken</h2>
 	<div class="row">
 		<ul>
-			{{#each asses}}
-				{{#unless ass_kicked}}
+			{{#each assesTable}}
+				{{#unless dataValues.ass_kicked}}
 					<div class="col-sm-3 names">
-						{{> asses/ass-block ass_kicked=true}}
+						{{> asses/ass-block }}
 					</div>
 				{{/unless}}
 			{{/each}}
@@ -35,11 +35,11 @@
 	<h2>Asses Kicked</h2>
 
 	<ul>
-		{{#each asses}}
-			{{#if ass_kicked}}
+		{{#each assesTable}}
+			{{#if dataValues.ass_kicked}}
 				<div class = "col-sm-3 names">
-					<img src="/assets/img/{{ass_picture}}kicked.png"><br>
-					<p class = "name-wrap">{{ass_name}}</p>
+					<img src="/assets/img/{{dataValues.ass_picture}}kicked.png"><br>
+					<p class = "name-wrap">{{dataValues.ass_name}}</p>
 				</div>
 			{{/if}}
 		{{/each}}

@@ -1,7 +1,5 @@
 <li>
-	<img src="/assets/img/{{ass_picture}}.png">
-	<p class = "name-wrap">{{ass_name}}</p>
-	{{#if ass_kicked}}
-	<button class="kick-em" data-id="{{id}}" data-newkick="{{ass_kicked}}">Kick</button>
-	{{/if}}
+	<img src="/assets/img/{{dataValues.ass_picture}}.png">
+	<p class = "name-wrap">{{dataValues.ass_name}}</p>
+	<button class="kick-em" data-id="{{dataValues.id}}" data-newkick="true">Kick</button>
 </li>
