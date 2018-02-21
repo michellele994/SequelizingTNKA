@@ -1,7 +1,11 @@
 const db = require("../models");
 module.exports = function(app) {
 	app.get("/", function(req, res) {
-		db.assesTable.findAll({}).then(function(dbAsses) {
+		db.assesTable.findAll({
+			order: [
+				["ass_name", "ASC"]
+			]
+		}).then(function(dbAsses) {
 			const hbsObject = {
 				assesTable: dbAsses
 			};
