@@ -4,7 +4,8 @@ module.exports = function(app) {
 		db.assesTable.findAll({
 			order: [
 				["ass_name", "ASC"]
-			]
+			],
+			include: [db.Kicker]
 		}).then(function(dbAsses) {
 			const hbsObject = {
 				assesTable: dbAsses
