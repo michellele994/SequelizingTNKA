@@ -44,10 +44,8 @@
 		{{#each assesTable}}
 			{{#if dataValues.ass_kicked}}
 				<div class = "col-sm-3 names">
-					<div class = "tooltip">
-						<img src="/assets/img/{{dataValues.ass_picture}}kicked.png">
+						<img class="tooltip" src="/assets/img/{{dataValues.ass_picture}}kicked.png">
 						<span class="tooltiptext">Kicked by {{dataValues.Kicker.name}}</span>
-					</div>
 					<br>
 					<p class = "name-wrap">{{dataValues.ass_name}}</p>
 				</div>

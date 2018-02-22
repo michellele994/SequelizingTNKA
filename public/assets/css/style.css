@@ -42,7 +42,7 @@ li {
 .name-wrap {
 	word-wrap: break-word;
 }
-.tooltiptext {
+.tooltip .tooltiptext {
 	visibility: hidden;
     width: 120px;
     background-color: black;
