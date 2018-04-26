@@ -36,7 +36,7 @@ Once you have finished using this application, find some new friends using this 
 
 ## Live Demonsration
 To see this project live, go [here](https://nameless-hamlet-44403.herokuapp.com/)
-Enjoy
+Enjoy!
 
 Thank you!
 
