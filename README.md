@@ -35,7 +35,7 @@ Once you have finished using this application, find some new friends using this 
 * You can also hover over the pictures of those who had their asses kicked to see who added them to the list.
 
 ## Live Demonsration
-To see this project live, go [here](https://nameless-hamlet-44403.herokuapp.com/)
+To see this project live, go [here](https://murmuring-dawn-26874.herokuapp.com/)
 Enjoy!
 
 Thank you!
